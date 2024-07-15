@@ -1,0 +1,191 @@
+/* Reset dan style dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Container utama */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Bagian kalkulator */
+.calculator {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.calculator article p {
+    margin-bottom: 1rem;
+}
+
+/* Form */
+form {
+    margin-top: 1rem;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.gender-label {
+    display: inline-block;
+    margin-right: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.gender-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+input[type="radio"]:checked + .gender-image {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.gender-label span {
+    display: block;
+    margin-top: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+    margin-left: 0.5rem;
+}
+
+button[type="reset"]:hover {
+    background-color: #d32f2f;
+}
+
+/* Keunggulan Fitur */
+.features {
+    margin-top: 2rem;
+}
+
+.features h2 {
+    margin-bottom: 1rem;
+}
+
+.features ol {
+    padding-left: 1.5rem;
+}
+
+/* Bagian hasil */
+.result {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: 2rem;
+}
+
+#bmiResult {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+#downloadResult {
+    background-color: #008CBA;
+    margin-bottom: 1rem;
+}
+
+#downloadResult:hover {
+    background-color: #007399;
+}
+
+.result article {
+    margin-bottom: 1rem;
+}
+
+.result ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .result {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+}

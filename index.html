@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kalkulator BMI</title>
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
 </head>
 <body>
+    <header>
+        <h1>Kalkulator BMI</h1>
+    </header>
     
+    <main class="container">
+        <section class="calculator">
+            <article>
+                <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menawan, pencapaian berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
+            </article>
+            
+            <form id="bmiForm">
+                <fieldset>
+                    <legend>Jenis Kelamin</legend>
+                    <label for="pria" class="gender-label">
+                        <input type="radio" name="gender" id="pria" value="pria">
+                        <img src="assets/undraw_Male_avatar_g98d.png" alt="Pria" class="gender-image" id="imgPria">
+                        <span>Pria</span>
+                    </label>
+                    <label for="wanita" class="gender-label">
+                        <input type="radio" name="gender" id="wanita" value="wanita">
+                        <img src="assets/undraw_Female_avatar_efig.png" alt="Wanita" class="gender-image" id="imgWanita">
+                        <span>Wanita</span>
+                    </label>
+                </fieldset>
+                
+                <div class="form-group">
+                    <label for="weight">Berat Badan (kg)</label>
+                    <input type="number" id="weight" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Usia (tahun)</label>
+                    <input type="number" id="age" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="height">Tinggi Badan (cm)</label>
+                    <input type="number" id="height" required>
+                </div>
+                
+                <button type="submit">Hitung BMI</button>
+                <button type="reset">Reset</button>
+            </form>
+            
+            <aside class="features">
+                <h2>Keunggulan Fitur</h2>
+                <ol>
+                    <li>Menghitung berat badan</li>
+                    <li>Menentukan kategori berat badan ideal atau tidak</li>
+                    <li>Mempersiapkan program penurunan berat badan</li>
+                </ol>
+            </aside>
+        </section>
+        
+        <section class="result" id="resultSection">
+            <h2>Hasil</h2>
+            <div id="bmiResult"></div>
+            <button id="downloadResult">Download Hasil BMI</button>
+            <article id="bmiDescription"></article>
+            <article>
+                <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+                <ul>
+                    <li>Diabetes</li>
+                    <li>Hipertensi</li>
+                    <li>Sakit jantung</li>
+                    <li>Osteoarthritis</li>
+                </ul>
+            </article>
+            <button>Konsultasi Ahli Gizi Via Aplikasi</button>
+            <button>Registrasi Online Ahli Gizi</button>
+        </section>
+    </main>
+
+    <script>
+   
+    </script>
 </body>
 </html>
