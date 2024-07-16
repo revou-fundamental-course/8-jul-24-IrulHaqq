@@ -1,4 +1,4 @@
-/* Reset dan style dasar */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header */
+
 header {
     background-color: #4CAF50;
     color: white;
@@ -24,7 +24,7 @@ header h1 {
     margin: 0;
 }
 
-/* Container utama */
+
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -34,7 +34,7 @@ header h1 {
     justify-content: space-between;
 }
 
-/* Bagian kalkulator */
+
 .calculator {
     flex: 1;
     background-color: #fff;
@@ -48,7 +48,6 @@ header h1 {
     margin-bottom: 1rem;
 }
 
-/* Form */
 form {
     margin-top: 1rem;
 }
@@ -56,6 +55,7 @@ form {
 fieldset {
     border: none;
     margin-bottom: 1rem;
+    
 }
 
 legend {
@@ -71,8 +71,8 @@ legend {
 }
 
 .gender-image {
-    width: 50px;
-    height: 50px;
+    width: 130px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid transparent;
     transition: all 0.3s;
@@ -144,7 +144,7 @@ button[type="reset"]:hover {
     padding-left: 1.5rem;
 }
 
-/* Bagian hasil */
+
 .result {
     flex: 1;
     background-color: #fff;
@@ -178,7 +178,35 @@ button[type="reset"]:hover {
     margin-bottom: 1rem;
 }
 
-/* Responsif */
+/* Tambahan gaya untuk kotak hasil BMI berdasarkan kategori */
+.bmi-box {
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.bmi-kurus {
+    background-color: #FFA726; /* Orange */
+}
+
+.bmi-normal {
+    background-color: #4CAF50; /* Green */
+}
+
+.bmi-overweight {
+    background-color: #FFEB3B; /* Yellow */
+    color: black; /* Black text for readability */
+}
+
+.bmi-obese {
+    background-color: #f44336; /* Red */
+}
+
+
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

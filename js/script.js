@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('bmiForm');
     var resultDiv = document.getElementById('bmiResult');
     var descriptionDiv = document.getElementById('bmiDescription');
@@ -23,26 +23,31 @@ window.onload = function() {
         var bmi = berat / (tinggi * tinggi);
         bmi = bmi.toFixed(1);
 
-        var kategori, deskripsi;
+        var kategori, deskripsi, kelasWarna;
         if (bmi < 18.5) {
             kategori = 'Kurus';
             deskripsi = gender === 'pria' ? 
                 'Anda kurus. Pertimbangkan untuk meningkatkan asupan kalori dan protein.' :
                 'Anda kurus. Konsultasikan dengan dokter tentang peningkatan berat badan yang sehat.';
+            kelasWarna = 'bmi-kurus';
         } else if (bmi >= 18.5 && bmi < 25) {
             kategori = 'Normal';
             deskripsi = 'Berat badan Anda ideal. Pertahankan pola makan dan gaya hidup sehat.';
+            kelasWarna = 'bmi-normal';
         } else if (bmi >= 25 && bmi < 30) {
             kategori = 'Kelebihan berat badan';
             deskripsi = gender === 'pria' ? 
                 'Anda kelebihan berat badan. Fokus pada olahraga dan diet seimbang.' :
                 'Anda kelebihan berat badan. Pertimbangkan untuk berkonsultasi dengan ahli gizi.';
+            kelasWarna = 'bmi-overweight';
         } else {
             kategori = 'Obesitas';
             deskripsi = 'Anda mengalami obesitas. Sangat disarankan untuk berkonsultasi dengan dokter.';
+            kelasWarna = 'bmi-obese';
         }
 
         resultDiv.innerHTML = 'BMI Anda: ' + bmi + ' (' + kategori + ')';
+        resultDiv.className = 'bmi-box ' + kelasWarna;
         descriptionDiv.innerHTML = deskripsi;
 
         if (gender === 'pria') {
@@ -51,24 +56,14 @@ window.onload = function() {
             descriptionDiv.innerHTML += '<br><br>Catatan: Wanita umumnya memiliki persentase lemak tubuh lebih tinggi, yang mungkin tidak tercermin dalam BMI.';
         }
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        const genderLabels = document.querySelectorAll('.gender-label');
-        genderLabels.forEach(label => {
-            label.addEventListener('click', function() {
-                genderLabels.forEach(lbl => lbl.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
-    });
+
     // Efek visual untuk pemilihan gender
     genderInputs.forEach(function(input) {
         input.addEventListener('change', function() {
             genderInputs.forEach(function(inp) {
-                inp.nextElementSibling.style.borderColor = 'transparent';
-                inp.nextElementSibling.style.boxShadow = 'none';
+                inp.nextElementSibling.classList.remove('selected');
             });
-            this.nextElementSibling.style.borderColor = '#4CAF50';
-            this.nextElementSibling.style.boxShadow = '0 0 10px rgba(76, 175, 80, 0.5)';
+            this.nextElementSibling.classList.add('selected');
         });
     });
-};
+});
