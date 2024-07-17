@@ -8,50 +8,55 @@
     <script src="/js/script.js"></script>
 </head>
 <body>
+    <!-- Header halaman -->
     <header>
         <h1>Kalkulator BMI</h1>
     </header>
     
+    <!-- Konten utama -->
     <main class="container">
         <section class="calculator">
             <article>
                 <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menawan, pencapaian berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
             </article>
             
+            <!-- Formulir untuk menghitung BMI -->
             <form id="bmiForm">
+                <!-- Pemilihan jenis kelamin -->
                 <fieldset>
                     <legend>Jenis Kelamin</legend>
                     <label for="pria" class="gender-label">
                         <input type="radio" name="gender" id="pria" value="pria">
-                        <img src="assets/undraw_Male_avatar_g98d.png" alt="Pria" class="gender-image" id="imgPria">
+                        <img src="assets/male.png" alt="Pria" class="gender-image" id="imgPria">
                         <span>Pria</span>
                     </label>
                     <label for="wanita" class="gender-label">
                         <input type="radio" name="gender" id="wanita" value="wanita">
-                        <img src="assets/undraw_Female_avatar_efig.png" alt="Wanita" class="gender-image" id="imgWanita">
+                        <img src="assets/female.png" alt="Wanita" class="gender-image" id="imgWanita">
                         <span>Wanita</span>
                     </label>
                 </fieldset>
                 
+                <!-- Input berat badan -->
                 <div class="form-group">
                     <label for="weight">Berat Badan (kg)</label>
-                    <input type="number" id="weight" required>
+                    <input type="number" id="weight" required maxlength="3" pattern="\d{1,3}">
+                    <span class="warning" id="weightWarning"></span>
                 </div>
                 
-                <div class="form-group">
-                    <label for="age">Usia (tahun)</label>
-                    <input type="number" id="age" required>
-                </div>
-                
+                <!-- Input tinggi badan -->
                 <div class="form-group">
                     <label for="height">Tinggi Badan (cm)</label>
-                    <input type="number" id="height" required>
+                    <input type="number" id="height" required maxlength="3" pattern="\d{1,3}">
+                    <span class="warning" id="heightWarning"></span>
                 </div>
                 
+                <!-- Tombol submit dan reset -->
                 <button type="submit">Hitung BMI</button>
                 <button type="reset">Reset</button>
             </form>
             
+            <!-- Daftar keunggulan fitur -->
             <aside class="features">
                 <h2>Keunggulan Fitur</h2>
                 <ol>
@@ -62,11 +67,40 @@
             </aside>
         </section>
         
+        <!-- Bagian hasil perhitungan -->
         <section class="result" id="resultSection">
             <h2>Hasil</h2>
             <div id="bmiResult"></div>
-            <button id="downloadResult">Download Hasil BMI</button>
             <article id="bmiDescription"></article>
+            
+            <!-- Tabel kriteria BMI -->
+            <table id="bmiCriteria">
+                <thead>
+                    <tr>
+                        <th>BMI</th>
+                        <th>Kategori</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt; 18.5</td>
+                        <td>Kurus</td>
+                    </tr>
+                    <tr>
+                        <td>18.5 - 24.9</td>
+                        <td>Normal</td>
+                    </tr>
+                    <tr>
+                        <td>25.0 - 29.9</td>
+                        <td>Kelebihan berat badan</td>
+                    </tr>
+                    <tr>
+                        <td>&ge; 30.0</td>
+                        <td>Obesitas</td>
+                    </tr>
+                </tbody>
+            </table>
+            
             <article>
                 <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
                 <ul>
@@ -76,8 +110,6 @@
                     <li>Osteoarthritis</li>
                 </ul>
             </article>
-            <button>Konsultasi Ahli Gizi Via Aplikasi</button>
-            <button>Registrasi Online Ahli Gizi</button>
         </section>
     </main>
 </body>

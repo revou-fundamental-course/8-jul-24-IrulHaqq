@@ -1,10 +1,11 @@
-
+/* Reset default styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,7 +13,7 @@ body {
     background-color: #f4f4f4;
 }
 
-
+/* Header styles */
 header {
     background-color: #4CAF50;
     color: white;
@@ -24,7 +25,7 @@ header h1 {
     margin: 0;
 }
 
-
+/* Main container styles */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -34,7 +35,7 @@ header h1 {
     justify-content: space-between;
 }
 
-
+/* Calculator section styles */
 .calculator {
     flex: 1;
     background-color: #fff;
@@ -48,6 +49,7 @@ header h1 {
     margin-bottom: 1rem;
 }
 
+/* Form styles */
 form {
     margin-top: 1rem;
 }
@@ -55,7 +57,9 @@ form {
 fieldset {
     border: none;
     margin-bottom: 1rem;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 legend {
@@ -106,8 +110,24 @@ input[type="number"] {
     padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+.warning {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Button styles */
 button {
     background-color: #4CAF50;
     color: white;
@@ -131,7 +151,7 @@ button[type="reset"]:hover {
     background-color: #d32f2f;
 }
 
-/* Keunggulan Fitur */
+/* Features section */
 .features {
     margin-top: 2rem;
 }
@@ -144,7 +164,7 @@ button[type="reset"]:hover {
     padding-left: 1.5rem;
 }
 
-
+/* Result section */
 .result {
     flex: 1;
     background-color: #fff;
@@ -158,6 +178,32 @@ button[type="reset"]:hover {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 1rem 0;
+}
+
+#bmiCriteria {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#bmiCriteria th, #bmiCriteria td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#bmiCriteria th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#bmiCriteria tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#bmiCriteria tr:hover {
+    background-color: #ddd;
 }
 
 #downloadResult {
@@ -178,7 +224,7 @@ button[type="reset"]:hover {
     margin-bottom: 1rem;
 }
 
-/* Tambahan gaya untuk kotak hasil BMI berdasarkan kategori */
+/* BMI result */
 .bmi-box {
     padding: 1rem;
     border-radius: 8px;
@@ -189,24 +235,26 @@ button[type="reset"]:hover {
 }
 
 .bmi-kurus {
-    background-color: #FFA726; /* Orange */
+    background-color: #FFA726;
 }
 
 .bmi-normal {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
 }
 
 .bmi-overweight {
-    background-color: #FFEB3B; /* Yellow */
-    color: black; /* Black text for readability */
+    background-color: #FFEB3B;
+    color: black;
 }
 
 .bmi-obese {
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
 }
 
-
-
+#resultSection {
+    display: block;
+}
+/* responsif */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
