@@ -1,7 +1,7 @@
-# Kalkulator BMI
+# Mini Project: Kalkulator BMI
 
-Kalkulator BMI adalah aplikasi web yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (BMI).
-link brief: https://rebrand.ly/brief-miniproject 
+Kalkulator BMI adalah aplikasi web yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (BMI).\
+Link brief: [https://rebrand.ly/brief-miniproject](https://rebrand.ly/brief-miniproject)
 
 ## Identity
 **Yuwandi Ruli Bayhaqqi** | yuwandiruli12@gmail.com
@@ -9,8 +9,8 @@ link brief: https://rebrand.ly/brief-miniproject
 ## Mockup
 Berikut adalah mockup dari Kalkulator BMI:
 
-Inisial desain:
+### Inisial Desain:
 <img src="/assets/inisial.PNG" alt="Mockup Kalkulator BMI" width="500" />
 
-Inspirasi desain:
+### Inspirasi Desain:
 <img src="/assets/diea.PNG" alt="Mockup Kalkulator BMI" width="500" />
