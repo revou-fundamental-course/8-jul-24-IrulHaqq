@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mendapatkan elemen-elemen form dan hasil
     var form = document.getElementById('bmiForm');
     var resultDiv = document.getElementById('bmiResult');
     var descriptionDiv = document.getElementById('bmiDescription');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var resetButton = document.querySelector('button[type="reset"]');
     var resultSection = document.getElementById('resultSection');
 
-    // Event listener untuk submit form
     form.onsubmit = function(e) {
         e.preventDefault();
         hitungBMI();
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function hitungBMI() {
         var gender = document.querySelector('input[name="gender"]:checked').value;
         var berat = parseFloat(weightInput.value);
-        var tinggi = parseFloat(heightInput.value) / 100; // Konversi cm ke m
+        var tinggi = parseFloat(heightInput.value) / 100;
 
         // Validasi input
         if (isNaN(berat) || isNaN(tinggi) || berat > 999 || tinggi > 9.99) {
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Penanganan khusus untuk input 0
         if (berat === 0 || tinggi === 0) {
             resultDiv.innerHTML = 'BMI Anda: 0';
             resultDiv.className = 'bmi-box bmi-kurus';
@@ -37,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Perhitungan BMI
+        // RUMUS
         var bmi = berat / (tinggi * tinggi);
         bmi = bmi.toFixed(1);
 
@@ -94,15 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
             kelasWarna = 'bmi-obese';
         }
 
-        // Menampilkan hasil BMI
         resultDiv.innerHTML = 'BMI Anda: ' + bmi + ' (' + kategori + ')';
         resultDiv.className = 'bmi-box ' + kelasWarna;
         
-        // Memilih deskripsi secara acak
         var randomIndex = Math.floor(Math.random() * deskripsi.length);
         descriptionDiv.innerHTML = deskripsi[randomIndex];
 
-        // Menambahkan catatan khusus berdasarkan gender
         if (gender === 'pria') {
             descriptionDiv.innerHTML += '<br><br>Catatan: Pria umumnya memiliki massa otot lebih besar, yang dapat mempengaruhi hasil BMI. Ini mungkin tidak selalu mencerminkan tingkat lemak tubuh dengan akurat.';
         } else {
@@ -110,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listener untuk input gender
     genderInputs.forEach(function(input) {
         input.addEventListener('change', function() {
             genderInputs.forEach(function(inp) {
@@ -120,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validasi input berat badan
     weightInput.addEventListener('input', function() {
         if (this.value.length > 3) {
             weightWarning.textContent = 'Berat badan tidak boleh lebih dari 3 karakter.';
@@ -135,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Validasi input tinggi badan
     heightInput.addEventListener('input', function() {
         if (this.value.length > 3) {
             heightWarning.textContent = 'Tinggi badan tidak boleh lebih dari 3 karakter.';
@@ -150,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Event listener untuk button reset
     resetButton.addEventListener('click', function(e) {
         e.preventDefault();
 
@@ -165,15 +155,14 @@ document.addEventListener('DOMContentLoaded', function() {
         weightWarning.style.display = 'none';
         heightWarning.style.display = 'none';
 
-        // Ubah ini untuk membersihkan hasil tanpa menyembunyikan bagian
-        resultDiv.innerHTML = 'BMI Anda: -';
-        resultDiv.className = 'bmi-box'; // Hapus kelas warna spesifik
+        resultDiv.innerHTML = 'BMI Anda: ';
+        resultDiv.className = 'bmi-box';
         descriptionDiv.innerHTML = 'Masukkan data Anda untuk melihat hasil BMI.';
 
         document.getElementById('pria').focus();
     });
 
-    // Inisialisasi tampilan awal
-    resultDiv.innerHTML = 'BMI Anda: -';
+   
+    resultDiv.innerHTML = 'BMI Anda: ';
     descriptionDiv.innerHTML = 'Masukkan data Anda untuk melihat hasil BMI.';
 });
