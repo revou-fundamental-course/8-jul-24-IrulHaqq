@@ -9,11 +9,9 @@ Link brief: [https://rebrand.ly/brief-miniproject](https://rebrand.ly/brief-mini
 ## Mockup
 Berikut adalah mockup dari Kalkulator BMI:
 
-### Inisial Desain:
-<img src="/assets/inisial.PNG" alt="Mockup Kalkulator BMI" width="500" />
-
-### Inspirasi Desain:
-<img src="/assets/diea.PNG" alt="Mockup Kalkulator BMI" width="500" />
+| Inisial Desain | Inspirasi Desain |
+| --- | --- |
+| <img src="/assets/inisial.PNG" alt="Mockup Kalkulator BMI" width="250" /> | <img src="/assets/diea.PNG" alt="Mockup Kalkulator BMI" width="250" /> |
 
 ### Hasil tampilan Website:
 <img src="/assets/hasil.png" alt="Mockup Kalkulator BMI" width="500" />
