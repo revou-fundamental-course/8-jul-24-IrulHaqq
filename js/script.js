@@ -10,8 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
     var resetButton = document.querySelector('button[type="reset"]');
     var resultSection = document.getElementById('resultSection');
 
+    // Membuat elemen peringatan untuk jenis kelamin
+    var genderWarning = document.createElement('div');
+    genderWarning.id = 'genderWarning';
+    genderWarning.className = 'warning';
+    genderWarning.textContent = 'Silakan pilih jenis kelamin terlebih dahulu.';
+    genderWarning.style.display = 'none';
+
+    // Menyisipkan elemen peringatan setelah fieldset jenis kelamin
+    var genderFieldset = document.querySelector('fieldset');
+    genderFieldset.parentNode.insertBefore(genderWarning, genderFieldset.nextSibling);
+
     form.onsubmit = function(e) {
         e.preventDefault();
+        
+        // Memeriksa apakah jenis kelamin telah dipilih
+        var genderSelected = Array.from(genderInputs).some(input => input.checked);
+        
+        if (!genderSelected) {
+            genderWarning.style.display = 'block';
+            return;
+        } else {
+            genderWarning.style.display = 'none';
+        }
+
         hitungBMI();
     };
 
@@ -106,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     genderInputs.forEach(function(input) {
         input.addEventListener('change', function() {
+            genderWarning.style.display = 'none'
             genderInputs.forEach(function(inp) {
                 inp.nextElementSibling.classList.remove('selected');
             });
@@ -154,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         weightWarning.style.display = 'none';
         heightWarning.style.display = 'none';
+        genderWarning.style.display = 'none';
 
         resultDiv.innerHTML = 'BMI Anda: ';
         resultDiv.className = 'bmi-box';
@@ -162,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('pria').focus();
     });
 
-   
     resultDiv.innerHTML = 'BMI Anda: ';
     descriptionDiv.innerHTML = 'Masukkan data Anda untuk melihat hasil BMI.';
 });
