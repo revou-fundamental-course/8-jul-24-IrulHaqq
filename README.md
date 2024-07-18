@@ -11,7 +11,7 @@ Berikut adalah mockup dari Kalkulator BMI:
 
 | Inisial Desain | Inspirasi Desain |
 | --- | --- |
-| <img src="/assets/inisial.PNG" alt="Mockup Kalkulator BMI" width="250" /> | <img src="/assets/diea.PNG" alt="Mockup Kalkulator BMI" width="250" /> |
+| <img src="/assets/inisial.PNG" alt="Mockup Kalkulator BMI" width="400" /> | <img src="/assets/diea.PNG" alt="Mockup Kalkulator BMI" width="400" /> |
 
 ### Hasil tampilan Website:
-<img src="/assets/run.gif" alt="Mockup Kalkulator BMI" width="500" />
+<img src="/assets/run.gif" alt="Mockup Kalkulator BMI" width="800" />
