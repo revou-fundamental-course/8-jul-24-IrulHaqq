@@ -3,6 +3,8 @@
 Kalkulator BMI adalah aplikasi web yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (BMI).\
 Link brief: [https://rebrand.ly/brief-miniproject](https://rebrand.ly/brief-miniproject)
 
+Link website: [https://revou-fundamental-course.github.io/8-jul-24-IrulHaqq/](https://revou-fundamental-course.github.io/8-jul-24-IrulHaqq/)
+
 ## Identity
 **Yuwandi Ruli Bayhaqqi** | yuwandiruli12@gmail.com
 
